@@ -1,6 +1,7 @@
 :root{
-    --border-radius: 10px;
+    --border-radius: 20px;
 }
+
 .main-widget-container{
     /* dimensions */
     height: 90vh;
@@ -9,23 +10,32 @@
     /* styling */
     background-color: white;
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: hidden    
 }
 
 .main-widget-container .main-widget-background{
     /* dimensions */
     height: 100%;
     width: 100%;
+    padding-top: 10%;
 
     /* styling */
-    background: linear-gradient(to bottom, #1B052E, #333368);
+    background: linear-gradient(to bottom, #1B052E, #5757AA);
+
+    /* display */
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
 
     /* positioning */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: relative;
 }
 
 .main-widget-container .main-widget-background .main-widget-mountain{
     width: 100%;    
+
+    /* display */
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
 }

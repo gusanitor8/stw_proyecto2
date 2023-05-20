@@ -1,0 +1,9 @@
+.content{
+    /* dimensions */
+    height: 100%;
+    
+    /* positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
