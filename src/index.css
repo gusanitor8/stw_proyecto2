@@ -1,0 +1,15 @@
+:root{
+    --bg-color: #483855;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0; 
+}
+  
+body #root{
+    height: 100%;
+    width: 100%;
+    background-color:var(--bg-color);
+}
