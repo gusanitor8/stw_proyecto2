@@ -4,7 +4,7 @@ import mountain from '../images/snowy_mountain.svg';
 import { useEffect, useState } from 'react';
 
 
-function MainWidget(){
+function MainWidget(props){
     const [bgImage, setBgImage] = useState(mountain);
     const [city, setCity] = useState('Guatemala City, Guatemala');
     const [temperature, setTemperature] = useState(27);
@@ -15,7 +15,9 @@ function MainWidget(){
         <>
             <div className='main-widget-container'>
                 <div className='main-widget-background'>
-                    <Temperature temperature={temperature} city={city}/>
+                    <div className='temperature-component-container'>
+                        <Temperature temperature={props.temperature} city={props.city}/>
+                    </div>
                     <img className='main-widget-mountain' src={bgImage}></img>                    
                 </div>
             </div>

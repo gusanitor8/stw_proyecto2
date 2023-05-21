@@ -16,8 +16,7 @@
 .main-widget-container .main-widget-background{
     /* dimensions */
     height: 100%;
-    width: 100%;
-    padding-top: 10%;
+    width: 100%;    
 
     /* styling */
     background: linear-gradient(to bottom, #1B052E, #5757AA);
@@ -38,4 +37,13 @@
     z-index: 0;
     position: absolute;
     bottom: 0;
+}
+
+.main-widget-container .main-widget-background .temperature-component-container{
+    /* dimensions */
+    margin-top:20%;
+
+    /* display */
+    display: flex;
+    justify-content: center;
 }

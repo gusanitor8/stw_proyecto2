@@ -7,21 +7,21 @@
     color: white;
     
     /* dimensions */
-    width: 30%;
+    width: 60%;
 
     /* styling */
     font-family: var(--font-family);    
 }
 
-.temperature-container .temperature-current{
-    margin: 0px 0 0px 0; 
+.temperature-container .temperature-current{    
     font-weight: 300;
     font-size: 2.7em;
     text-align: center;
+    margin:0;
 }
 
 .temperature-container .temperature-city{
-    margin: 0px 0 0px 0; 
+    margin: 0; 
     font-weight: 300;
     text-align: center;
 }
