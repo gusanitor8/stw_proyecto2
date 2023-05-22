@@ -2,6 +2,15 @@
     --border-radius: 20px;
 }
 
+@keyframes rain{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 20% 100%;
+    }
+}
+
 .main-widget-container{
     /* dimensions */
     height: 90vh;
@@ -10,7 +19,8 @@
     /* styling */
     background-color: white;
     border-radius: var(--border-radius);
-    overflow: hidden    
+    overflow: hidden;
+    filter: drop-shadow( 0px 0px 5px rgba(0,0,0,0.5));
 }
 
 .main-widget-container .main-widget-background{
@@ -18,8 +28,21 @@
     height: 100%;
     width: 100%;    
 
-    /* styling */
-    background: linear-gradient(to bottom, #1B052E, #5757AA);
+    
+    /* display */
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+
+    /* positioning */
+    position: relative;
+}
+
+.main-widget-container .main-widget-background-rain{
+    /* dimensions */
+    height: 100%;
+    width: 100%;    
+
 
     /* display */
     display: flex;
@@ -30,7 +53,18 @@
     position: relative;
 }
 
-.main-widget-container .main-widget-background .main-widget-mountain{
+.main-widget-background-rain::after{
+    content:'';
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;    
+    position: absolute;
+    background: url('../images/rain.png');
+    animation: rain 0.2s linear infinite;
+}
+
+.main-widget-mountain{
     width: 100%;    
 
     /* display */
@@ -39,7 +73,7 @@
     bottom: 0;
 }
 
-.main-widget-container .main-widget-background .temperature-component-container{
+.temperature-component-container{
     /* dimensions */
     margin-top:20%;
 

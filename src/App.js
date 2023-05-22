@@ -5,12 +5,17 @@ import { useEffect, useState } from 'react';
 function App() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState('Guatemala City');
-  const [temperature, setTemperature] = useState(27);
+  const [temperature, setTemperature] = useState(11);
+  const [rainRate, setRainRate] = useState(2);
+  const [weatherCode, setWeatherCode] = useState(801);
+  const [isNight, setIsNight] = useState(false);
+
 
   async function fetchData() {
-    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${process.env.REACT_APP_API_KEY}`;    
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=`;    
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -18,7 +23,7 @@ function App() {
       }
       const data = await response.json();
       setWeatherData(data);
-      console.log(data); //borrame
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -54,6 +59,12 @@ function App() {
     if (weatherData) {
       setCity(weatherData.data[0].city_name);
       setTemperature(weatherData.data[0].temp);
+      setRainRate(weatherData.data[0].precip);
+      setWeatherCode(weatherData.data[0].weather.code);
+
+      if(weatherData.data[0].pod === 'n'){
+        setIsNight(true);
+      }
     }
   }, [weatherData]);
 
@@ -61,7 +72,12 @@ function App() {
   return (
     <>
       <div className='content'>        
-        <MainWidget city={city} temperature={temperature}/>
+        <MainWidget 
+          city={city} 
+          temperature={temperature} 
+          rain={rainRate} 
+          weatherCode = {weatherCode} 
+          isNight={isNight}/>
       </div>
     </>
   );
