@@ -8,14 +8,16 @@ function App() {
 
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState('Guatemala City');
-  const [temperature, setTemperature] = useState(11);
-  const [rainRate, setRainRate] = useState(2);
-  const [weatherCode, setWeatherCode] = useState(801);
-  const [isNight, setIsNight] = useState(false);
+  const [temperature, setTemperature] = useState(13);
+  const [rainRate, setRainRate] = useState(1);
+  const [weatherCode, setWeatherCode] = useState(0);
+  const [isNight, setIsNight] = useState(true);
+  const [description, setDescription] = useState('Clear sky');
 
 
   async function fetchData() {
-    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=`;    
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=`; 
+    console.log(apiUrl);   
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -61,8 +63,9 @@ function App() {
       setTemperature(weatherData.data[0].temp);
       setRainRate(weatherData.data[0].precip);
       setWeatherCode(weatherData.data[0].weather.code);
+      setDescription(weatherData.data[0].weather.description);
 
-      if(weatherData.data[0].pod === 'n'){
+      if(weatherData.data[0].pod === 'n'){        
         setIsNight(true);
       }
     }
@@ -77,7 +80,8 @@ function App() {
           temperature={temperature} 
           rain={rainRate} 
           weatherCode = {weatherCode} 
-          isNight={isNight}/>
+          isNight={isNight}
+          description={description}/>
       </div>
     </>
   );

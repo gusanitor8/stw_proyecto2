@@ -16,13 +16,13 @@ function MainWidget(props){
         let updatedStyle = {};
 
         if(props.isNight){
-            setBgImage(mountainDay);
-            updatedStyle = {background: 'linear-gradient(to bottom, #3CAECC, #E5E5C4)'};
-            setDynamicStyle(updatedStyle);
-
-        } else {
             setBgImage(mountain);
             updatedStyle = {background: 'linear-gradient(to bottom, #1B052E, #5757AA)'};
+            setDynamicStyle(updatedStyle);
+
+        } else {            
+            setBgImage(mountainDay);
+            updatedStyle = {background: 'linear-gradient(to bottom, #3CAECC, #E5E5C4)'};
             setDynamicStyle(updatedStyle);
         }
     }, [props.isNight]);
@@ -30,10 +30,10 @@ function MainWidget(props){
 
     useEffect(() => {        
         if(props.rain > 2){
-            setClassNameRain('main-widget-background-rain');
-            
+            setClassNameRain('main-widget-background-rain');            
         }
     },[props.rainRate]);
+
 
     useEffect(() => {
         let updatedStyle = {};
@@ -47,12 +47,16 @@ function MainWidget(props){
         
     },[props.weatherCode]);
 
+
     return(
         <>
             <div className='main-widget-container'>
                 <div className={classNameRain} style={dynamicStyle}>
                     <div className='temperature-component-container'>
-                        <Temperature temperature={props.temperature} city={props.city}/>
+                        <Temperature 
+                            temperature={props.temperature} 
+                            city={props.city}
+                            description={props.description}/>
                     </div>
                     <img className='main-widget-mountain' src={bgImage}></img>                    
                 </div>
