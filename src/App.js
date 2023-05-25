@@ -1,6 +1,7 @@
 import './App.css';
 import MainWidget from './components/MainWidget';
 import UvWidget from './components/UvWidget';
+import SearchBar from './components/SearchBar';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   const [uvIndex, setUvIndex] = useState(0);
 
   async function fetchData() {
-    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&include=uv_index&key=`; 
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&include=uv_index&key=a8a31afee28b41a281ec1441ba584d47	`; 
     console.log(apiUrl);   
     try {
       const response = await fetch(apiUrl);
@@ -33,6 +34,19 @@ function App() {
     }
   }
 
+  const fetchCityWeather = async () => {
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?city=${city}&include=uv_index&key=a8a31afee28b41a281ec1441ba584d47	`;
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("API request failed");
+      }
+      const data = await response.json();
+      setWeatherData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // Get user's location
   useEffect(() => {
@@ -74,10 +88,20 @@ function App() {
     }
   }, [weatherData]);
 
+  // Get user search from city
+  const handleSearch = (searchCity) => {
+    setCity(searchCity);
+  };
+
+  useEffect(() => {
+    fetchCityWeather();
+  }, [city]);
+
 
   return (
     <>
-      <div className='content'>        
+      <div className='content'>
+        <SearchBar onSearch={handleSearch} />
         <MainWidget 
           city={city} 
           temperature={temperature} 

@@ -1,5 +1,6 @@
 import React from "react";
 import './UvWidget.css';
+import Temperature from "./Temperature";
 
 function UvWidget({uvIndex}) {
     const meterStyle = {
