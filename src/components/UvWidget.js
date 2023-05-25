@@ -4,7 +4,7 @@ import Temperature from "./Temperature";
 
 function UvWidget({uvIndex}) {
     const meterStyle = {
-        transform: `rotate(${(2 / 10) * 180}deg)`,
+        transform: `rotate(${(uvIndex / 10) * 180}deg)`,
       };
 
     return (
