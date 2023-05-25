@@ -19,7 +19,7 @@ function App() {
   const [uvIndex, setUvIndex] = useState(0);
 
   async function fetchData() {
-    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&include=uv_index&key=`; 
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&include=uv_index&key=API_KEY`; 
     console.log(apiUrl);   
     try {
       const response = await fetch(apiUrl);
@@ -35,7 +35,7 @@ function App() {
   }
 
   const fetchCityWeather = async () => {
-    const apiUrl = `http://api.weatherbit.io/v2.0/current?city=${city}&include=uv_index&key=`;
+    const apiUrl = `http://api.weatherbit.io/v2.0/current?city=${city}&include=uv_index&key=API_KEY`;
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
