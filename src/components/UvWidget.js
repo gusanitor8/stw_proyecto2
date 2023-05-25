@@ -3,6 +3,8 @@ import './UvWidget.css';
 import Temperature from "./Temperature";
 
 function UvWidget({uvIndex}) {
+    const roundedUvIndex = uvIndex.toFixed(2);
+
     const meterStyle = {
         transform: `rotate(${(uvIndex / 10) * 180}deg)`,
       };
@@ -16,7 +18,7 @@ function UvWidget({uvIndex}) {
         </div>
         </div>
         <div className="uv-index-number">
-            {uvIndex}
+            {roundedUvIndex}
         </div>
             <h1>Uv Index</h1>
         </div>

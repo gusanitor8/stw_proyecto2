@@ -71,10 +71,10 @@
   }
 
 .uv-index-number {
-  top: 20%;
+  top: 30%;
   left: 45%;
   color: white;
-  font-size: 400%;
+  font-size: 200%;
   position: absolute;
   align-items: center;
 }
@@ -84,6 +84,6 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 250%;
+    font-size: 300%;
   }
 }
