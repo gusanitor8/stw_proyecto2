@@ -15,7 +15,10 @@ function UvWidget({uvIndex}) {
             <div class="gauge__cover"></div>
         </div>
         </div>
-        <p>UV Index: {uvIndex}</p>
+        <div className="uv-index-number">
+            {uvIndex}
+        </div>
+            <h1>Uv Index</h1>
         </div>
     );
 }

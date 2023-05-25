@@ -1,8 +1,9 @@
 .search-bar-container {
     position: absolute;
     z-index: 1;
-    margin-bottom: 45%;
-    margin-left: 77%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
   }
   
   .input {
@@ -16,14 +17,10 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .input:focus {
-    outline: none;
-  }
-  
   .search-bar-button {
     margin-left: 10px;
     padding: 10px 20px;
-    background-color: #480ca8;
+    background-color: #0095ff;
     color: white;
     border: none;
     border-radius: 20px;
