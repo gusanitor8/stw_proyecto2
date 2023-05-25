@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Proyecto 2 — Weather Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introducción
+Este proyecto es un panel de visualización del clima que muestra información actualizada sobre el clima de una ciudad específica, incluyendo temperatura, índice UV y descripción del clima. Utiliza la API de Weatherbit para obtener los datos meteorológicos. La pagina puede ser encontrada en: 
 
-## Available Scripts
+## Tecnologías Implementadas
+- ⚛ **React**: Utilizado para construir la interfaz de usuario y manejar la lógica del proyecto.
+- 💅 **CSS**: Utilizado para el diseño y estilo de los componentes y la página en general.
+- 📦 **Webpack**: Utilizado como el empaquetador de módulos para el proyecto.
+- 📄 **JavaScript**: Se utilizaron scripts de JavaScript para controlar tanto los componentes como la pagina principal del proyecto "App".
+- 📦 **package.json**: Archivo de configuración que define las dependencias y scripts del proyecto.
+- 🌐 **Google Fonts**: Se utilizaron fuentes de Google Fonts para estilizar el texto en la página.
 
-In the project directory, you can run:
+## Features
+- 📱 **Responsive**: El diseño y la implementación son totalmente responsivos, lo que permite que la página se adapte y se vea correctamente en diferentes dispositivos y tamaños de pantalla.
+- 🌐 **Utilizacion de barra de busqueda**: La busqueda puede realizarse por medio de ciudades, las cuales son mandadas a llamar a la API.
+- 🌐 **uso del API**: Puedes visitar la página del API utilizado en el siguiente enlace: [https://www.weatherbit.io](https://www.weatherbit.io).
 
-### `npm start`
+## Estructura
+- Carpeta public: donde se encuentra toda la estructura del html que se manda a llamar en el App.js. Ademas de los componente necesarios para el backend del la pagina, como el icono y algunas otras imagenes.
+- Carpeta src: como lo indica su nombre donde va el source del proyecto, donde van los archivos Apps.js, Index.js y App.css donde se encuentran los estilos respetivos para la pagina. Ademas una carpeta dentro de este donde van los componentes necesarios como fonts. 
+- Carpeta components: esta se encuentra dentro de la carpeta anterior 'src', en esta como lo indica su nombre encontraremos todos los componentes utilizados dentro de la App, como MainWidget, UvWidhet, Temperature, SearchBar, y sus estilos correspondientes, se encuentra en esta carpeta de manera que podamos usarlos y llamarlos globalmente. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Archivos Principales
+- *App.js*: El archivo principal de la aplicación React que define el componente App que representa la estructura de la página de la aplicación Weather App.
+- *index.js*: El archivo principal de entrada que renderiza el componente App en el elemento root del documento HTML.
+- *App.css*: El archivo principal de la aplicación React que define el componente App que representa la estructura de la página de la aplicación clon de Tesla.
+- *index.html*: El archivo HTML principal que estructura la página del proyecto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Instrucciones de Ejecución
+1. Clona el repositorio en tu máquina local usando:
+```javascript
+https://github.com/gusanitor8/stw_proyecto2.git
+```
+2. Ejecuta el comando el siguiente comando para instalar las dependencias:
+```javascript
+npm install
+```
+3. Obtén una API key de Weatherbit registrándote en su sitio web:
+(https://www.weatherbit.io)
+4. En el archivo App.js, reemplaza la constante API_KEY con tu propia API key de Weatherbit
+5. Ejecuta el comando el siguiente comando para iniciar la aplicación en el servidor de desarrollo:
+```javascript
+npm start
+```
