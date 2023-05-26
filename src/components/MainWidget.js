@@ -29,7 +29,8 @@ function MainWidget(props){
 
 
     useEffect(() => {        
-        if(props.rain > 2){
+        console.log('lluevia: ', props.rainRate);
+        if(props.rainRate > 0){            
             setClassNameRain('main-widget-background-rain');            
         }
     },[props.rainRate]);
