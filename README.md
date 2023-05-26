@@ -1,7 +1,7 @@
 # Proyecto 2 — Weather Dashboard
 
 ## Introducción
-Este proyecto es un panel de visualización del clima que muestra información actualizada sobre el clima de una ciudad específica, incluyendo temperatura, índice UV y descripción del clima. Utiliza la API de Weatherbit para obtener los datos meteorológicos. La pagina puede ser encontrada en: 
+Este proyecto es un panel de visualización del clima que muestra información actualizada sobre el clima de una ciudad específica, incluyendo temperatura, índice UV y descripción del clima. Utiliza la API de Weatherbit para obtener los datos meteorológicos. La pagina puede ser encontrada en: https://proyecto2-stw-377bf.web.app
 
 ## Tecnologías Implementadas
 - ⚛ **React**: Utilizado para construir la interfaz de usuario y manejar la lógica del proyecto.
