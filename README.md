@@ -39,7 +39,7 @@ npm install
 ```
 3. Obtén una API key de Weatherbit registrándote en su sitio web:
 (https://www.weatherbit.io)
-4. En el archivo App.js, reemplaza la constante API_KEY con tu propia API key de Weatherbit
+4. En el archivo .env, reemplaza la constante que se encuentra ahi con tu propia API key de Weatherbit.
 5. Ejecuta el comando el siguiente comando para iniciar la aplicación en el servidor de desarrollo:
 ```javascript
 npm start
