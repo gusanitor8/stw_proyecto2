@@ -30,11 +30,11 @@ function MainWidget(props){
 
     useEffect(() => {        
         console.log('lluevia: ', props.rainRate);
-        if(props.description.toLowerCase().includes('rain')){
+        if(props.description.toLowerCase().includes('rain') || props.rainRate > 0){
             setClassNameRain('main-widget-background-rain');            
         }
-        if(props.rainRate > 0){            
-            setClassNameRain('main-widget-background-rain');            
+        else if (props.rainRate === 0 || props.rainRate === undefined){
+            setClassNameRain('main-widget-background');
         }
     },[props.rainRate, props.description]);
 
